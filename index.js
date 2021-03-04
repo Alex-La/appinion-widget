@@ -9,6 +9,6 @@ if (process.env.NODE_ENV === "production") {
   app.use("/", express.static(path.join(__dirname, "dist")));
 }
 
-app.listen({ port: process.env.PORT || 4000 }, () => {
-  console.log("🚀 Server ready at 4000 port");
+app.listen({ port: 4040 }, () => {
+  console.log("🚀 Server ready at 4040 port");
 });
