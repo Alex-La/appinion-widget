@@ -1,4 +1,8 @@
 .video-wrap .overlay:hover {
+  transition: 0.3s;
+}
+
+.video-wrap .overlay:hover {
   opacity: 1 !important;
 }
 
