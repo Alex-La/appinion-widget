@@ -4,9 +4,11 @@ const widgets = { video: lazy(() => import("./widgets/Video")) };
 
 const App = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      {React.createElement(widgets["video"])}
-    </Suspense>
+    <div className="appinion-widget">
+      <Suspense fallback={<div>Loading...</div>}>
+        {React.createElement(widgets["video"])}
+      </Suspense>
+    </div>
   );
 };
 

@@ -1,0 +1,15 @@
+.video-wrap .overlay:hover {
+  opacity: 1 !important;
+}
+
+.video-wrap .control:hover > .pause {
+  display: inline !important;
+}
+
+.video-wrap .control:hover > .replay {
+  display: inline !important;
+}
+
+.video-wrap .control:hover > .close {
+  display: inline !important;
+}
