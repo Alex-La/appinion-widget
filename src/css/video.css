@@ -1,19 +1,59 @@
-.video-wrap .overlay:hover {
+.appinion-widget-video {
+  position: absolute;
+  right: 60px;
+  bottom: 40px;
+}
+
+.appinion-widget-video > .widget-video {
+  border: 4px solid #fe950d;
+  border-radius: 15px;
+  width: 197px;
+  height: 283px;
+  object-fit: cover;
+}
+
+.appinion-widget-video > .widget-video-overlay {
+  cursor: pointer;
+  position: absolute;
+  background-color: black;
+  margin-bottom: 4px;
+  left: 4px;
+  right: 4px;
+  top: 4px;
+  bottom: 4px;
+  border-radius: 10px;
+}
+
+.appinion-widget-video > .widget-video-play {
+  cursor: pointer;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: #fe950d;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appinion-widget-video > .widget-video-overlay:hover {
   transition: 0.3s;
+  opacity: 0.6 !important;
 }
 
-.video-wrap .overlay:hover {
-  opacity: 1 !important;
+.appinion-widget-video > .widget-video-overlay:hover + .widget-video-play {
+  transition: 0.3s;
+  box-shadow: 0 0 0 11px hsla(34, 99%, 52%, 0.17),
+    0 0 0 5px hsla(34, 99%, 52%, 0.33);
 }
 
-.video-wrap .control:hover > .pause {
-  display: inline !important;
-}
-
-.video-wrap .control:hover > .replay {
-  display: inline !important;
-}
-
-.video-wrap .control:hover > .close {
-  display: inline !important;
+.appinion-widget-video > .widget-video-play:hover {
+  transition: 0.3s;
+  box-shadow: 0 0 0 11px hsla(34, 99%, 52%, 0.17),
+    0 0 0 5px hsla(34, 99%, 52%, 0.33);
 }
