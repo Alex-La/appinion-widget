@@ -20,11 +20,6 @@ module.exports = {
         use: [
           {
             loader: "file-loader",
-            options: {
-              publicPath: (resourcePath, context) => {
-                return path.relative(path.dirname(resourcePath), context) + "/";
-              },
-            },
           },
         ],
       },
