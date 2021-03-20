@@ -114,6 +114,28 @@ const Video = () => {
         {expand && (
           <>
             <div
+              style={{
+                height: 45,
+                position: "absolute",
+                bottom: 130,
+                width: "60%",
+                backgroundColor: "#FE950D",
+                left: 0,
+                right: 0,
+                marginLeft: "auto",
+                marginRight: "auto",
+                borderRadius: 40,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <p style={{ fontSize: 14, fontWeight: 500, color: "white" }}>
+                hello
+              </p>
+            </div>
+
+            <div
               onClick={() => setPlay(!play)}
               style={{
                 position: "absolute",
