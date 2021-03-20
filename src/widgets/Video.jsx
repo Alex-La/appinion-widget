@@ -9,12 +9,16 @@ const Video = () => {
 
   const [expand, setExpand] = useState(false);
   const [play, setPlay] = useState(true);
-  const [mute, setMute] = useState(false);
+  const [mute, setMute] = useState(true);
 
   useEffect(() => {
     if (videoRef.current) {
-      if (expand) videoRef.current.play();
-      else videoRef.current.pause();
+      if (expand) {
+        videoRef.current.currentTime = 0;
+        videoRef.current.play();
+        setPlay(true);
+        setMute(false);
+      }
     }
   }, [expand]);
 
@@ -26,10 +30,10 @@ const Video = () => {
   }, [play]);
 
   useEffect(() => {
-    if (videoRef.current) {
+    if (videoRef.current && expand) {
       videoRef.current.muted = mute;
     }
-  }, [mute]);
+  }, [mute, expand]);
 
   return (
     <div
@@ -49,12 +53,16 @@ const Video = () => {
             borderRadius: expand && 40,
             borderWidth: expand && 7,
           }}
+          autoPlay
+          muted
+          loop
         >
-          <source src="https://r18---sn-n8v7znly.googlevideo.com/videoplayback?expire=1616196586&ei=id9UYO2DPNr07ASS_IPIDQ&ip=138.122.86.98&id=o-AGleCLJYUBVjZIPPjG7xPoCHY4TW7jGcvgEaNwgaw_Qw&itag=18&source=youtube&requiressl=yes&vprv=1&mime=video%2Fmp4&ns=MztCTOby_a66n_Ajp_mrphEF&gir=yes&clen=1491430&ratebypass=yes&dur=33.645&lmt=1448947096975602&fvip=2&fexp=24001373,24007246&c=WEB&n=-g-JP_Rq1L4ajs5SNs&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAKZC4uNszIIGVkXJnYiRv3i67crN27CL88xrOnPKTNDbAiAshZrEFoUDdDayzBbzvxzqjcihwyigQhsR4XFkvFQz-g%3D%3D&rm=sn-nxgbp2xfxc-5w0e7l,sn-bg0r77l&req_id=c48dfbf15710a3ee&redirect_counter=2&cms_redirect=yes&ipbypass=yes&mh=-u&mip=95.24.1.101&mm=29&mn=sn-n8v7znly&ms=rdu&mt=1616174710&mv=m&mvi=18&pl=19&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIhAP583ynfx5I-8d0yQXNbA3B34H7f7OSgtCn6s8HM-m7mAiA3CxHyYbqDOUduRosncbtQx3XGWj4tJ_SxcP9rk49S0Q%3D%3D" />
+          <source src="https://r18---sn-n8v7knel.googlevideo.com/videoplayback?expire=1616218563&ei=YzVVYKLVIuumx_AP59eacA&ip=113.53.60.93&id=o-AIXWR2eOMpdsOmkem1WWAJV1wzJwCoyzgH97OljHov-i&itag=18&source=youtube&requiressl=yes&vprv=1&mime=video%2Fmp4&ns=NTyola-4Tp4XyP38Bi8GPHQF&gir=yes&clen=1491430&ratebypass=yes&dur=33.645&lmt=1448947096975602&fvip=2&fexp=24001373,24007246&c=WEB&n=1WIcvhh17EfxEakjRY&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIgRsW35i_8WGpsfR1AgWVT9CdDCQq80AXnUf4dFyGGb_4CIQC9UUdyPFTSlqkaHuRgdny0Z24y7SQhJbnbJRh7a06bwA%3D%3D&rm=sn-uvuppb-c33l7l,sn-uvu-c33ez7l,sn-30aer7s&req_id=b472d351e09ca3ee&redirect_counter=3&cms_redirect=yes&ipbypass=yes&mh=-u&mip=95.24.1.101&mm=30&mn=sn-n8v7knel&ms=nxu&mt=1616196503&mv=m&mvi=18&pl=19&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgfBm6ZHIZCTBevXanvM80O7gOjHh8ILD3mQv5Mphaz8MCIQCt2RPK4sJVl_MgFApjz9O91lDkA7bh1hrNdK3Ttgs-rA%3D%3D" />
         </video>
 
         {!expand && (
           <div
+            onClick={() => setExpand(true)}
             className="widget-video-overlay"
             style={{
               opacity: opacity,
@@ -87,19 +95,37 @@ const Video = () => {
           </div>
         )}
 
-        <img
-          src={Logo}
-          alt="logo"
-          style={{
-            position: "absolute",
-            bottom: expand ? 30 : 15,
-            left: expand ? 30 : "none",
-            right: expand ? "none" : 15,
-          }}
-        />
+        <a
+          href="https://appinion.digital"
+          target="_blank"
+          referrerPolicy="no-referrer"
+        >
+          <img
+            src={Logo}
+            alt="logo"
+            style={{
+              position: "absolute",
+              bottom: expand ? 30 : 15,
+              [expand ? "left" : "right"]: expand ? 30 : 15,
+            }}
+          />
+        </a>
 
         {expand && (
           <>
+            <div
+              onClick={() => setPlay(!play)}
+              style={{
+                position: "absolute",
+                left: 0,
+                right: 0,
+                top: 50,
+                bottom: 110,
+                margin: "auto",
+                cursor: "pointer",
+              }}
+            />
+
             <svg
               onClick={() => setExpand(false)}
               className="widget-close"
@@ -244,10 +270,16 @@ const Video = () => {
               </svg>
             )}
 
-            <div className="video-logo-title">
+            <a
+              className="video-logo-title"
+              href="https://appinion.digital"
+              target="_blank"
+              referrerPolicy="no-referrer"
+              style={{ textDecoration: "none" }}
+            >
               <span style={{ fontWeight: 700 }}>ОТЗЫВЫ,</span> КОТОРЫМ{" "}
               <p style={{ margin: 0, fontWeight: 700 }}>ДОВЕРЯЮТ</p>
-            </div>
+            </a>
           </>
         )}
       </div>

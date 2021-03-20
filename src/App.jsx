@@ -1,4 +1,5 @@
 import React, { lazy, Suspense } from "react";
+import "./index.css";
 
 const widgets = { video: lazy(() => import("./widgets/Video")) };
 
