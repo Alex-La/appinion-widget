@@ -149,7 +149,10 @@ const Video = () => {
             />
 
             <svg
-              onClick={() => setExpand(false)}
+              onClick={() => {
+                setExpand(false);
+                videoRef.current.pause();
+              }}
               className="widget-close"
               style={{
                 position: "absolute",
