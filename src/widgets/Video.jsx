@@ -3,13 +3,18 @@ import "../css/video.css";
 
 import Logo from "../static/logoWidget.svg";
 
-const Video = () => {
+const Video = ({ data = null }) => {
   const videoRef = useRef();
   const [opacity, setOpacity] = useState(0);
+  const [position, setPosition] = useState(["bottom", "right"]);
 
   const [expand, setExpand] = useState(false);
   const [play, setPlay] = useState(true);
   const [mute, setMute] = useState(true);
+
+  useEffect(() => {
+    setPosition(JSON.parse(data.position));
+  }, [data]);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -41,6 +46,8 @@ const Video = () => {
       style={{
         boxShadow: expand && "10px 0px 15px rgba(0, 0, 0, 0.1)",
         borderRadius: 40,
+        [position[1]]: 60,
+        [position[0]]: 40,
       }}
     >
       <div className="widget-wrap">
@@ -57,7 +64,7 @@ const Video = () => {
           muted
           loop
         >
-          <source src="http://app.appinion.digital/storage/video/eca2b478-779d-487c-973a-655381d77e80.mp4" />
+          <source src={data.videos[0].url} />
         </video>
 
         {!expand && (
@@ -113,27 +120,39 @@ const Video = () => {
 
         {expand && (
           <>
-            <div
-              style={{
-                height: 45,
-                position: "absolute",
-                bottom: 130,
-                width: "60%",
-                backgroundColor: "#FE950D",
-                left: 0,
-                right: 0,
-                marginLeft: "auto",
-                marginRight: "auto",
-                borderRadius: 40,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
+            <a
+              href={data.button_link}
+              target="_blank"
+              referrerPolicy="no-referrer"
             >
-              <p style={{ fontSize: 14, fontWeight: 500, color: "white" }}>
-                hello
-              </p>
-            </div>
+              <div
+                style={{
+                  height: 45,
+                  position: "absolute",
+                  bottom: 130,
+                  width: "60%",
+                  backgroundColor: data.button_color,
+                  left: 0,
+                  right: 0,
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  borderRadius: 40,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: 14,
+                    fontWeight: 500,
+                    color: data.text_color,
+                  }}
+                >
+                  {data.button_inner_text}
+                </p>
+              </div>
+            </a>
 
             <div
               onClick={() => setPlay(!play)}

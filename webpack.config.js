@@ -2,9 +2,10 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack");
+require("babel-polyfill");
 
 module.exports = {
-  entry: __dirname + "/src/index.js",
+  entry: ["babel-polyfill", __dirname + "/src/index.js"],
   devtool: "source-map",
   output: {
     path: path.join(__dirname, "/dist"),

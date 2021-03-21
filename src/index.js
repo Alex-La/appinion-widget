@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 
-export const init = (config) => {
+export const init = (token) => {
   const widDiv = document.createElement("div");
   widDiv.id = "appinion-widget-root";
   document.body.append(widDiv);
   ReactDOM.render(
-    <App config={config} />,
+    <App token={token} />,
     document.getElementById("appinion-widget-root")
   );
 };
