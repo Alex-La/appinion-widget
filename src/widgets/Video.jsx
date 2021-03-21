@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../css/video.css";
 
-import Logo from "../static/logo.svg";
+import Logo from "../static/logoWidget.svg";
 
 const Video = () => {
   const videoRef = useRef();
@@ -57,7 +57,7 @@ const Video = () => {
           muted
           loop
         >
-          <source src="https://r18---sn-n8v7knel.googlevideo.com/videoplayback?expire=1616218563&ei=YzVVYKLVIuumx_AP59eacA&ip=113.53.60.93&id=o-AIXWR2eOMpdsOmkem1WWAJV1wzJwCoyzgH97OljHov-i&itag=18&source=youtube&requiressl=yes&vprv=1&mime=video%2Fmp4&ns=NTyola-4Tp4XyP38Bi8GPHQF&gir=yes&clen=1491430&ratebypass=yes&dur=33.645&lmt=1448947096975602&fvip=2&fexp=24001373,24007246&c=WEB&n=1WIcvhh17EfxEakjRY&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIgRsW35i_8WGpsfR1AgWVT9CdDCQq80AXnUf4dFyGGb_4CIQC9UUdyPFTSlqkaHuRgdny0Z24y7SQhJbnbJRh7a06bwA%3D%3D&rm=sn-uvuppb-c33l7l,sn-uvu-c33ez7l,sn-30aer7s&req_id=b472d351e09ca3ee&redirect_counter=3&cms_redirect=yes&ipbypass=yes&mh=-u&mip=95.24.1.101&mm=30&mn=sn-n8v7knel&ms=nxu&mt=1616196503&mv=m&mvi=18&pl=19&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgfBm6ZHIZCTBevXanvM80O7gOjHh8ILD3mQv5Mphaz8MCIQCt2RPK4sJVl_MgFApjz9O91lDkA7bh1hrNdK3Ttgs-rA%3D%3D" />
+          <source src="http://app.appinion.digital/storage/video/eca2b478-779d-487c-973a-655381d77e80.mp4" />
         </video>
 
         {!expand && (
