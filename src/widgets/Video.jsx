@@ -13,6 +13,7 @@ const Video = ({ data = null }) => {
   const [mute, setMute] = useState(true);
 
   useEffect(() => {
+    console.log(data);
     setPosition(JSON.parse(data.position));
   }, [data]);
 
@@ -338,7 +339,7 @@ const Video = ({ data = null }) => {
               margin: 0,
             }}
           >
-            Дмитрий нагиев
+            {data.first_name}
           </p>
           <div
             style={{
@@ -356,7 +357,7 @@ const Video = ({ data = null }) => {
               margin: 0,
             }}
           >
-            Амбассадор бренда МТС
+            {data.signature}
           </p>
         </div>
       )}
