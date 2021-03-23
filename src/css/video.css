@@ -70,3 +70,15 @@
   padding: 0 20px;
   border-left: 2px solid #ffffff;
 }
+
+@media screen and (max-width: 426px) {
+  .appinion-widget-video {
+    transform: scale(0.5);
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .appinion-widget-video {
+    transform: scale(0.6);
+  }
+}

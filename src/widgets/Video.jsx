@@ -11,6 +11,14 @@ const Video = ({ data = null }) => {
   const [expand, setExpand] = useState(false);
   const [play, setPlay] = useState(true);
   const [mute, setMute] = useState(true);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  const resize = () => setWidth(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener("resize", resize);
+    () => window.removeEventListener("resize", resize);
+  }, []);
 
   useEffect(() => {
     console.log(data);
@@ -47,8 +55,9 @@ const Video = ({ data = null }) => {
       style={{
         boxShadow: expand && "10px 0px 15px rgba(0, 0, 0, 0.1)",
         borderRadius: 40,
-        [position[1]]: 60,
-        [position[0]]: 40,
+        [position[1]]: width <= 426 ? 30 : 60,
+        [position[0]]: width <= 426 ? 20 : 40,
+        transformOrigin: `${position[0]} ${position[1]}`,
         zIndex: 99999,
       }}
     >
