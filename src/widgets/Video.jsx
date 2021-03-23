@@ -49,6 +49,7 @@ const Video = ({ data = null }) => {
         borderRadius: 40,
         [position[1]]: 60,
         [position[0]]: 40,
+        zIndex: 99999,
       }}
     >
       <div className="widget-wrap">
