@@ -74,11 +74,17 @@
 @media screen and (max-width: 426px) {
   .appinion-widget-video {
     transform: scale(0.3);
+    -moz-transform: scale(0.3);
+    -webkit-transform: scale(0.3);
+    -ms-transform: scale(0.3);
   }
 }
 
 @media screen and (max-width: 769px) {
   .appinion-widget-video {
     transform: scale(0.4);
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    -ms-transform: scale(0.4);
   }
 }
