@@ -60,7 +60,6 @@ const Video = ({ data = null }) => {
             height: expand && 505,
             borderRadius: expand && 40,
             borderWidth: expand && 7,
-            boxShadow: "inset 0px -58px 36px -12px rgba(0, 0, 0, 0.67)",
           }}
           autoPlay
           muted
@@ -127,7 +126,7 @@ const Video = ({ data = null }) => {
             <div
               style={{
                 position: "absolute",
-                marginBottom: 4,
+                marginBottom: 0,
                 left: 7,
                 right: 7,
                 top: 7,
