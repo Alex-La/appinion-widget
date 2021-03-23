@@ -60,6 +60,7 @@ const Video = ({ data = null }) => {
             height: expand && 505,
             borderRadius: expand && 40,
             borderWidth: expand && 7,
+            boxShadow: "inset 0px -58px 36px -12px rgba(0, 0, 0, 0.67)",
           }}
           autoPlay
           muted
@@ -103,24 +104,52 @@ const Video = ({ data = null }) => {
           </div>
         )}
 
-        <a
-          href="https://appinion.digital"
-          target="_blank"
-          referrerPolicy="no-referrer"
-        >
-          <img
-            src={Logo}
-            alt="logo"
-            style={{
-              position: "absolute",
-              bottom: expand ? 30 : 15,
-              [expand ? "left" : "right"]: expand ? 30 : 15,
-            }}
-          />
-        </a>
+        {!expand && (
+          <a
+            href="https://appinion.digital"
+            target="_blank"
+            referrerPolicy="no-referrer"
+          >
+            <img
+              src={Logo}
+              alt="logo"
+              style={{
+                position: "absolute",
+                bottom: 15,
+                right: 15,
+              }}
+            />
+          </a>
+        )}
 
         {expand && (
           <>
+            <div
+              style={{
+                position: "absolute",
+                marginBottom: 5,
+                left: 5,
+                right: 5,
+                top: 5,
+                bottom: 5,
+                borderRadius: 40,
+                boxShadow: "inset 0px -58px 36px -12px rgba(0, 0, 0, 0.67)",
+              }}
+            />
+
+            <div
+              onClick={() => setPlay(!play)}
+              style={{
+                position: "absolute",
+                left: 0,
+                right: 0,
+                top: 50,
+                bottom: 110,
+                margin: "auto",
+                cursor: "pointer",
+              }}
+            />
+
             <a
               href={data.button_link}
               target="_blank"
@@ -154,19 +183,6 @@ const Video = ({ data = null }) => {
                 </p>
               </div>
             </a>
-
-            <div
-              onClick={() => setPlay(!play)}
-              style={{
-                position: "absolute",
-                left: 0,
-                right: 0,
-                top: 50,
-                bottom: 110,
-                margin: "auto",
-                cursor: "pointer",
-              }}
-            />
 
             <svg
               onClick={() => {
@@ -316,14 +332,33 @@ const Video = ({ data = null }) => {
             )}
 
             <a
+              href="https://appinion.digital"
+              target="_blank"
+              referrerPolicy="no-referrer"
+            >
+              <img
+                src={Logo}
+                alt="logo"
+                style={{
+                  position: "absolute",
+                  bottom: 30,
+                  left: 30,
+                }}
+              />
+            </a>
+
+            <a
               className="video-logo-title"
               href="https://appinion.digital"
               target="_blank"
               referrerPolicy="no-referrer"
               style={{ textDecoration: "none" }}
             >
-              <span style={{ fontWeight: 700 }}>ОТЗЫВЫ,</span> КОТОРЫМ{" "}
-              <p style={{ margin: 0, fontWeight: 700 }}>ДОВЕРЯЮТ</p>
+              <span style={{ fontWeight: 700, color: "white" }}>ОТЗЫВЫ,</span>{" "}
+              КОТОРЫМ{" "}
+              <p style={{ margin: 0, fontWeight: 700, color: "white" }}>
+                ДОВЕРЯЮТ
+              </p>
             </a>
           </>
         )}
