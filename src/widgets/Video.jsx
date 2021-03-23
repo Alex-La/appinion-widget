@@ -61,6 +61,8 @@ const Video = ({ data = null }) => {
             height: expand && 505,
             borderRadius: expand && 40,
             borderWidth: expand && 7,
+            backgroundColor: data.button_color,
+            border: `4px solid ${data.button_color}`,
           }}
           autoPlay
           muted
@@ -72,6 +74,8 @@ const Video = ({ data = null }) => {
         {!expand && (
           <div
             onClick={() => setExpand(true)}
+            onMouseOver={() => setOpacity(0.6)}
+            onMouseOut={() => setOpacity(0)}
             className="widget-video-overlay"
             style={{
               opacity: opacity,
@@ -85,6 +89,13 @@ const Video = ({ data = null }) => {
             onMouseOver={() => setOpacity(0.6)}
             onMouseOut={() => setOpacity(0)}
             className="widget-video-play"
+            style={{
+              backgroundColor: data.button_color,
+              boxShadow:
+                opacity === 0.6 &&
+                `0 0 0 11px ${data.button_color}26,
+    0 0 0 5px ${data.button_color}4D`,
+            }}
           >
             <svg
               style={{ marginLeft: 10 }}
@@ -380,7 +391,7 @@ const Video = ({ data = null }) => {
             style={{
               width: 46,
               height: 4,
-              backgroundColor: "#FE950D",
+              backgroundColor: data.button_color,
               margin: "8px 0",
             }}
           />
