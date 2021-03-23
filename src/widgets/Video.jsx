@@ -127,12 +127,12 @@ const Video = ({ data = null }) => {
             <div
               style={{
                 position: "absolute",
-                marginBottom: 5,
-                left: 5,
-                right: 5,
-                top: 5,
-                bottom: 5,
-                borderRadius: 40,
+                marginBottom: 4,
+                left: 7,
+                right: 7,
+                top: 7,
+                bottom: 7,
+                borderRadius: 30,
                 boxShadow: "inset 0px -58px 36px -12px rgba(0, 0, 0, 0.67)",
               }}
             />
