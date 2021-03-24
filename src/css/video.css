@@ -10,7 +10,7 @@
 }
 
 .appinion-widget-video > .widget-wrap > .widget-video {
-  transition: 0.8s;
+  transition: 0.5s;
   border-radius: 15px;
   width: 197px;
   height: 283px;
@@ -46,7 +46,7 @@
 }
 
 .appinion-widget-video > .widget-wrap > .widget-video-overlay:hover {
-  transition: 0.8s;
+  transition: 0.5s;
   opacity: 0.6 !important;
 }
 
@@ -54,11 +54,11 @@
   > .widget-wrap
   > .widget-video-overlay:hover
   + .widget-video-play {
-  transition: 0.8s;
+  transition: 0.5s;
 }
 
 .appinion-widget-video > .widget-wrap > .widget-video-play:hover {
-  transition: 0.8s;
+  transition: 0.5s;
 }
 
 .appinion-widget-video > .widget-wrap > .video-logo-title {

@@ -53,7 +53,7 @@ const Video = ({ data = null }) => {
     <div
       className="appinion-widget-video"
       style={{
-        boxShadow: expand && "10px 0px 15px rgba(0, 0, 0, 0.1)",
+        boxShadow: expand && "1px 3px 6px rgba(0, 0, 0, 0.12)",
         borderRadius: 40,
         [position[1]]: width <= 426 ? 30 : 60,
         [position[0]]: width <= 426 ? 20 : 40,
@@ -80,6 +80,31 @@ const Video = ({ data = null }) => {
           <source src={data.videos[0].url} />
         </video>
 
+        <div
+          style={{
+            position: "absolute",
+            marginBottom: 0,
+            left: expand ? 7 : 4,
+            right: expand ? 7 : 4,
+            top: expand ? 7 : 4,
+            bottom: expand ? 7 : 4,
+            borderRadius: expand ? 30 : 15,
+            boxShadow: "inset 0px -58px 36px -12px rgba(0, 0, 0, 0.67)",
+          }}
+        />
+
+        {!expand && (
+          <img
+            src={Logo}
+            alt="logo"
+            style={{
+              position: "absolute",
+              bottom: 15,
+              right: 15,
+            }}
+          />
+        )}
+
         {!expand && (
           <div
             onClick={() => setExpand(true)}
@@ -87,6 +112,7 @@ const Video = ({ data = null }) => {
             onMouseOut={() => setOpacity(0)}
             className="widget-video-overlay"
             style={{
+              transition: "0.5s",
               opacity: opacity,
             }}
           />
@@ -124,39 +150,8 @@ const Video = ({ data = null }) => {
           </div>
         )}
 
-        {!expand && (
-          <a
-            href="https://appinion.digital"
-            target="_blank"
-            referrerPolicy="no-referrer"
-          >
-            <img
-              src={Logo}
-              alt="logo"
-              style={{
-                position: "absolute",
-                bottom: 15,
-                right: 15,
-              }}
-            />
-          </a>
-        )}
-
         {expand && (
           <>
-            <div
-              style={{
-                position: "absolute",
-                marginBottom: 0,
-                left: 7,
-                right: 7,
-                top: 7,
-                bottom: 7,
-                borderRadius: 30,
-                boxShadow: "inset 0px -58px 36px -12px rgba(0, 0, 0, 0.67)",
-              }}
-            />
-
             <div
               onClick={() => setPlay(!play)}
               style={{
