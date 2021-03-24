@@ -165,44 +165,46 @@ const Video = ({ data = null }) => {
               }}
             />
 
-            <a
-              href={data.button_link}
-              target="_blank"
-              referrerPolicy="no-referrer"
-            >
-              <div
-                style={{
-                  height: 45,
-                  position: "absolute",
-                  bottom: 130,
-                  width: "60%",
-                  backgroundColor: data.button_color,
-                  left: 0,
-                  right: 0,
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                  borderRadius: 40,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+            {data.button_inner_text && (
+              <a
+                href={data.button_link}
+                target="_blank"
+                referrerPolicy="no-referrer"
               >
-                <p
+                <div
                   style={{
-                    fontSize: 14,
-                    fontWeight: 500,
-                    color: data.text_color,
+                    height: 45,
+                    position: "absolute",
+                    bottom: 130,
+                    width: "60%",
+                    backgroundColor: data.button_color,
+                    left: 0,
+                    right: 0,
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    borderRadius: 40,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                 >
-                  {data.button_inner_text}
-                </p>
-              </div>
-            </a>
+                  <p
+                    style={{
+                      fontSize: 14,
+                      fontWeight: 500,
+                      color: data.text_color,
+                    }}
+                  >
+                    {data.button_inner_text}
+                  </p>
+                </div>
+              </a>
+            )}
 
             <svg
               onClick={() => {
                 setExpand(false);
-                videoRef.current.pause();
+                videoRef.current.muted = true;
               }}
               className="widget-close"
               style={{
