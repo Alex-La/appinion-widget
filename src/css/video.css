@@ -2,7 +2,7 @@
 
 .appinion-widget-video {
   font-family: "Montserrat", sans-serif !important;
-  position: absolute;
+  position: fixed;
 }
 
 .appinion-widget-video .widget-video {
@@ -56,13 +56,13 @@
 }
 
 .appinion-widget-video .video-logo-title {
-  font-size: 14px;
-  color: white;
-  position: absolute;
-  bottom: 30px;
-  right: 15px;
-  padding: 0 20px;
-  border-left: 2px solid #ffffff;
+  font-size: 14px !important;
+  color: white !important;
+  position: absolute !important;
+  bottom: 30px !important;
+  right: 15px !important;
+  padding: 0 20px !important;
+  border-left: 2px solid #ffffff !important;
 }
 
 @media screen and (max-width: 769px) {

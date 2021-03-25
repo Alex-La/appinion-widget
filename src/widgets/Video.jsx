@@ -54,7 +54,6 @@ const Video = ({ data = null }) => {
       className="appinion-widget-video"
       style={{
         transition: "0.5s",
-        position: "fixed",
         borderRadius: expand ? 40 : 15,
         [position[1]]: width <= 426 ? 30 : 60,
         [position[0]]: width <= 426 ? 20 : 40,
