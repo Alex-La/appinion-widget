@@ -69,7 +69,7 @@ const Video = ({ data = null }) => {
             width: expand && 354,
             height: expand && 505,
             borderRadius: expand && 40,
-            borderWidth: expand && 7,
+            borderWidth: expand ? 7 : 4,
             backgroundColor: data.button_color,
             border: `4px solid ${data.button_color}`,
           }}
