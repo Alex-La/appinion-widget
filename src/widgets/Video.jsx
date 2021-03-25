@@ -366,8 +366,11 @@ const Video = ({ data = null }) => {
           )}
 
           <a
-            style={{ transition: "0.8s", opacity: expand ? 1 : 0 }}
-            href="https://appinion.digital"
+            style={{
+              transition: expand ? "1s" : "0s",
+              opacity: expand ? 1 : 0,
+            }}
+            href={expand && "https://appinion.digital"}
             target="_blank"
             referrerPolicy="no-referrer"
           >
@@ -384,12 +387,12 @@ const Video = ({ data = null }) => {
 
           <a
             className="video-logo-title"
-            href="https://appinion.digital"
+            href={expand && "https://appinion.digital"}
             target="_blank"
             referrerPolicy="no-referrer"
             style={{
               textDecoration: "none",
-              transition: "0.8s",
+              transition: expand ? "1s" : "0s",
               opacity: expand ? 1 : 0,
             }}
           >
