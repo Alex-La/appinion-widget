@@ -6,10 +6,9 @@
 }
 
 .appinion-widget-video > .widget-wrap {
-  position: relative;
 }
 
-.appinion-widget-video > .widget-wrap > .widget-video {
+.appinion-widget-video .widget-video {
   transition: 0.5s;
   border-radius: 15px;
   width: 197px;
@@ -17,19 +16,20 @@
   object-fit: cover;
 }
 
-.appinion-widget-video > .widget-wrap > .widget-video-overlay {
+.appinion-widget-video .widget-video-overlay {
   cursor: pointer;
   position: absolute;
   background-color: black;
   margin-bottom: 0px;
-  left: 4px;
-  right: 4px;
-  top: 4px;
-  bottom: 4px;
-  border-radius: 10px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  border-radius: 15px;
 }
 
-.appinion-widget-video > .widget-wrap > .widget-video-play {
+.appinion-widget-video .widget-video-play {
+  transition: 0.5s;
   cursor: pointer;
   position: absolute;
   width: 70px;
@@ -45,23 +45,20 @@
   align-items: center;
 }
 
-.appinion-widget-video > .widget-wrap > .widget-video-overlay:hover {
+.appinion-widget-video .widget-video-overlay:hover {
   transition: 0.5s;
   opacity: 0.6 !important;
 }
 
-.appinion-widget-video
-  > .widget-wrap
-  > .widget-video-overlay:hover
-  + .widget-video-play {
+.appinion-widget-video .widget-video-overlay:hover + .widget-video-play {
   transition: 0.5s;
 }
 
-.appinion-widget-video > .widget-wrap > .widget-video-play:hover {
+.appinion-widget-video .widget-video-play:hover {
   transition: 0.5s;
 }
 
-.appinion-widget-video > .widget-wrap > .video-logo-title {
+.appinion-widget-video .video-logo-title {
   font-size: 14px;
   color: white;
   position: absolute;
