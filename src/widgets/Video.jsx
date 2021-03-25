@@ -86,8 +86,8 @@ const Video = ({ data = null }) => {
             style={{
               transition: "0.5s",
               borderRadius: expand ? 40 : 15,
-              width: expand ? 304 : 157,
-              height: expand ? 455 : 243,
+              width: expand ? 354 : 157,
+              height: expand ? 495 : 243,
               objectFit: "cover",
             }}
             muted
