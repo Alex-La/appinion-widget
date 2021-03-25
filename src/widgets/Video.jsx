@@ -369,8 +369,13 @@ const Video = ({ data = null }) => {
             style={{
               transition: expand ? "1s" : "0s",
               opacity: expand ? 1 : 0,
+              cursor: "pointer",
             }}
-            href={expand && "https://appinion.digital"}
+            onClick={() =>
+              !expand
+                ? setExpand(true)
+                : window.open("https://appinion.digital", "_blank").focus()
+            }
             target="_blank"
             referrerPolicy="no-referrer"
           >
@@ -387,13 +392,18 @@ const Video = ({ data = null }) => {
 
           <a
             className="video-logo-title"
-            href={expand && "https://appinion.digital"}
+            onClick={() =>
+              !expand
+                ? setExpand(true)
+                : window.open("https://appinion.digital", "_blank").focus()
+            }
             target="_blank"
             referrerPolicy="no-referrer"
             style={{
               textDecoration: "none",
               transition: expand ? "1s" : "0s",
               opacity: expand ? 1 : 0,
+              cursor: "pointer",
             }}
           >
             <span style={{ fontWeight: 700, color: "white" }}>ОТЗЫВЫ,</span>{" "}
