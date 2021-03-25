@@ -56,8 +56,8 @@ const Video = ({ data = null }) => {
         transition: "0.5s",
         position: "fixed",
         borderRadius: expand ? 40 : 15,
-        [position[1]]: 60,
-        [position[0]]: 40,
+        [position[1]]: width <= 426 ? 30 : 60,
+        [position[0]]: width <= 426 ? 20 : 40,
         transformOrigin: `${position[0]} ${position[1]}`,
         zIndex: 99999,
         backgroundColor: "white",
@@ -86,8 +86,8 @@ const Video = ({ data = null }) => {
             style={{
               transition: "0.5s",
               borderRadius: expand ? 40 : 15,
-              width: expand ? 354 : 197,
-              height: expand ? 505 : 283,
+              width: expand ? 304 : 157,
+              height: expand ? 455 : 243,
               objectFit: "cover",
             }}
             muted
