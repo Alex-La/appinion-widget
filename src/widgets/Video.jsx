@@ -91,6 +91,8 @@ const Video = ({ data = null }) => {
             }}
             muted
             autoPlay
+            controls={false}
+            preload
             loop
           >
             <source src={data.videos[0].url} />
