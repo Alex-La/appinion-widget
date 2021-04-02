@@ -90,12 +90,16 @@ const Video = ({ data = null }) => {
               objectFit: "cover",
             }}
             muted
-            autoPlay
-            controls={false}
-            preload
             loop
+            autoPlay
+            playsInline
+            preload="auto"
+            controls={false}
+            controlsList="nodownload"
+            disablePictureInPicture
+            src={data.videos[0].url}
           >
-            <source src={data.videos[0].url} />
+            <source src={data.videos[0].url} type="video/mp4" />
           </video>
           <div
             style={{
