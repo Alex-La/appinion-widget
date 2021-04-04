@@ -89,12 +89,11 @@ const Video = ({ data = null }) => {
               height: expand ? 495 : 243,
               objectFit: "cover",
             }}
-            muted
             loop
+            muted
             autoPlay
             playsInline
             preload="auto"
-            controls={false}
             controlsList="nodownload"
             disablePictureInPicture
             src={data.videos[0].url}
