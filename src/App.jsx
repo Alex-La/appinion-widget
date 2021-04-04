@@ -4,7 +4,7 @@ import "./index.css";
 const widgets = { video: lazy(() => import("./widgets/Video")) };
 
 const App = ({
-  token = "$2y$10$dRviOZhcoc.MFOkrsemIEONHjwpXVMTTE2wDm7z.wruArVp9qCq2u",
+  token = "$2y$10$uUPb.lJgS.JCyw6UJ6E7SuTUdkZjwgMdTTOu4o2ryTB6dyRxlEzlS",
 }) => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
